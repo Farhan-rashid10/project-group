@@ -18,7 +18,7 @@ const ContactUs = () => {
 
   useEffect(() => {
     // Fetch contact info
-    fetch('http://127.0.0.1:5000/contacts/')
+    fetch('http://127.0.0.1:5000/contact-us/')
       .then((response) => response.json())
       .then((data) => setInfo(data))
       .catch((error) => console.error('Error fetching contact info:', error));
@@ -35,7 +35,7 @@ const ContactUs = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('http://127.0.0.1:5000/contacts', {
+    fetch('http://127.0.0.1:5000/contact-us', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

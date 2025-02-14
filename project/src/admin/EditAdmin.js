@@ -21,7 +21,7 @@ const AdminAppointment = () => {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5500/user');
+      const response = await axios.get('http://127.0.0.1:5000/user');
       setAppointments(response.data);
     } catch (error) {
       console.error('Error fetching appointments:', error);
@@ -36,7 +36,7 @@ const AdminAppointment = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:5500/user/${id}`);
+      await axios.delete(`http://127.0.0.1:5000/user/${id}`);
       setAppointments(appointments.filter((app) => app.id !== id));
     } catch (error) {
       console.error('Error deleting appointment:', error);
@@ -54,7 +54,7 @@ const AdminAppointment = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://127.0.0.1:5500/user/${selectedAppointment.id}`, formData);
+      const response = await axios.put(`http://127.0.0.1:5000/user/${selectedAppointment.id}`, formData);
       setAppointments(appointments.map((app) => (app.id === response.data.id ? response.data : app)));
       setShowModal(false);
       setSelectedAppointment(null);

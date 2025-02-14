@@ -9,7 +9,7 @@ const AdminContact = () => {
 
   useEffect(() => {
     // Fetch data from db.json
-    fetch('http://127.0.0.1:5000/contact/') // Update the URL if necessary
+    fetch('http://127.0.0.1:5000/contact-us') // Update the URL if necessary
       .then(response => response.json())
       .then(data => {
         setData(data);
@@ -23,7 +23,7 @@ const AdminContact = () => {
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://127.0.0.1:5000/contact//${id}`, {
+    fetch(`http://127.0.0.1:5000/contact-us/${id}`, {
       method: 'DELETE'
     })
       .then(() => {
@@ -43,7 +43,7 @@ const AdminContact = () => {
     if (!editingItem) return;
 
     try {
-      const response = await fetch(`http://127.0.0.1:5000/contact/${editingItem.id}`, {
+      const response = await fetch(`http://127.0.0.1:5000/contact-us/${editingItem.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'

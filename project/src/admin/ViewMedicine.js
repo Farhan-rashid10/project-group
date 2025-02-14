@@ -14,7 +14,7 @@ const MedicinesList = () => {
   useEffect(() => {
     const fetchMedicines = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5200/medicines");
+        const response = await fetch("http://127.0.0.1:5000/medicines");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -37,7 +37,7 @@ const MedicinesList = () => {
 
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5200/medicines/${id}`, {
+      const response = await fetch(`http://127.0.0.1:5000/medicines/${id}`, {
         method: "DELETE",
       });
       if (!response.ok) {
@@ -51,7 +51,7 @@ const MedicinesList = () => {
 
   const handleUpdate = async (id) => {
     try {
-      const response = await fetch(`http://127.0.0.1:5200/medicines/${id}`, {
+      const response = await fetch(`http://127.0.0.1:5000/medicines/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -96,7 +96,7 @@ const MedicinesList = () => {
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
           >
             <img
-              src={`http://127.0.0.1:5200/${medicine.imageUrl}`}
+              src={`http://127.0.0.1:5000/${medicine.imageUrl}`}
               alt={medicine.name}
               className="w-full h-48 object-cover"
             />

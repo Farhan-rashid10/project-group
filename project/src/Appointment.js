@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const Appointment = () => {
   const [formData, setFormData] = useState({
@@ -23,17 +22,28 @@ const Appointment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.1:5500/users', formData);
-      alert('Appointment booked successfully!');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        department: 'Select Department',
-        doctor: '',
-        date: '',
-        message: '',
+      const response = await fetch('http://127.0.0.1:5000/appointment', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+
+      if (response.ok) {
+        alert('Appointment booked successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          department: 'Select Department',
+          doctor: '',
+          date: '',
+          message: '',
+        });
+      } else {
+        throw new Error('There was an error booking your appointment.');
+      }
     } catch (error) {
       console.error('Error booking appointment:', error);
       alert('There was an error booking your appointment. Please try again.');

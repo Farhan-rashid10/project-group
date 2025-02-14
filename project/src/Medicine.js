@@ -8,7 +8,7 @@ const MedicinesList = () => {
   useEffect(() => {
     const fetchMedicines = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:5200/medicines");
+        const response = await fetch("http://127.0.0.1:5000/medicines");
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -35,14 +35,14 @@ const MedicinesList = () => {
   return (
     <div className="bg-gray-100 min-h-screen p-6">
       <h1 className="text-3xl font-bold text-center text-blue-700 mb-8">Our Medicines</h1>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 mx-auto md:grid-cols-3 lg:grid-cols-4">
         {medicines.map((medicine) => (
           <div
             key={medicine.id}
             className="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
           >
             <img
-              src={`http://127.0.0.1:5200/${medicine.imageUrl}`}
+              src={`http://127.0.0.1:5000/${medicine.imageUrl}`}
               alt={medicine.name}
               className="w-full h-48 object-cover"
             />

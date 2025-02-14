@@ -21,7 +21,7 @@ const AdminView = () => {
 
   const fetchAppointments = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5500/user');
+      const response = await axios.get('http://127.0.0.1:5000/appointments');
       setAppointments(response.data);
     } catch (error) {
       console.error('Error fetching appointments:', error);
@@ -36,7 +36,7 @@ const AdminView = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:5500/user/${id}`);
+      await axios.delete(`http://127.0.0.1:5000/appointments/${id}`);
       setAppointments(appointments.filter((app) => app.id !== id));
     } catch (error) {
       console.error('Error deleting appointment:', error);
@@ -60,7 +60,7 @@ const AdminView = () => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://127.0.0.1:5500/user/${selectedAppointment.id}`,
+        `http://127.0.0.1:5000/appointments/${selectedAppointment.id}`,
         formData
       );
       setAppointments(appointments.map((app) => (app.id === response.data.id ? response.data : app)));

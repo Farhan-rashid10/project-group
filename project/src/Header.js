@@ -15,7 +15,7 @@ const Header = () => {
     setIsAuthenticated(savedAuthState);
 
     if (savedAuthState && userEmail) {
-      fetch(`http://127.0.0.1:5300/user/email/${userEmail}`)
+      fetch(`http://127.0.0.1:5000/user/email/${userEmail}`)
         .then(response => response.json())
         .then(data => {
           if (data) {
@@ -56,7 +56,7 @@ const Header = () => {
     <>
       <div className="topbar bg-gray-100">
         <div className="container mx-auto py-3">
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between font-serif items-center">
             <ul className="flex space-x-4">
               <li><NavLink to="/about" className="text-gray-700 hover:text-blue-500">About</NavLink></li>
               <li><NavLink to="/services" className="text-gray-700 hover:text-blue-500">Services</NavLink></li>
@@ -106,11 +106,11 @@ const Header = () => {
       </div>
 
       <div className="flex justify-between bg-blue-700 py-4 px-8">
-        <NavLink to="" className="text-3xl ml-40 font-bold text-white">Medi<span className='text-black'>Plus</span></NavLink>
+        <NavLink to="" className="text-3xl ml-40 font-bold text-white font-serif italic">Medi<span className='italic text-black'>Plus</span></NavLink>
         <div className="flex space-x-4">
           
             {/* Centered Navigation */}
-        <nav className="main-menu flex-1 flex justify-space-between mr-80 space-x-8">
+        <nav className="main-menu flex-1 flex justify-space-between mr-80 space-x-8 font-sans italic">
           <NavLink to="/" exact activeClassName="text-white-600" className="font-medium text-white hover:text-black decoration-blue hover:underline">
             Home
           </NavLink>

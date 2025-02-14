@@ -41,7 +41,7 @@ const DoctorsForm = ({ onDoctorAdded }) => {
     if (formData.imageUrl) data.append("image", formData.imageUrl); // Changed 'imageUrl' to 'image'
   
     try {
-      const response = await fetch("http://127.0.0.1:5100/doctors", {
+      const response = await fetch("http://127.0.0.1:5000/doctors", {
         method: "POST",
         body: data,
       });

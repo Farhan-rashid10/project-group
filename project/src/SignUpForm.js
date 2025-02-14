@@ -14,7 +14,7 @@ const SignUpForm = () => {
 
     const user = { name, email, password };
 
-    fetch("http://127.0.0.1:5300/signup", {
+    fetch("http://127.0.0.1:5000/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

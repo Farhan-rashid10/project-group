@@ -5,7 +5,7 @@ const Management = () => {
   return (
     <div className="p-8 bg-gray-100">
       {/* Header Section with Text and Video */}
-      <div className="flex flex-col md:flex-row items-center md:items-center py-8 px-8 m-auto md:justify-between mb-8">
+      <div className="flex flex-col md:flex-row items-center md:items-center py-8 px-8 mx-auto md:justify-between mb-8">
         {/* Text Section */}
         <div className="md:w-1/2 mb-12 md:mb-0 pl-60">
           <h2 className="text-2xl font-bold text-blue-700">Our Management</h2>
@@ -16,7 +16,7 @@ const Management = () => {
           At Mediplus Hospital, our team of certified healthcare professionals is dedicated to providing high-quality, compassionate care. Using advanced medical tools and a personalized approach, we strive to enhance the health, comfort, and satisfaction of each patient, ensuring they receive the exceptional care they deserve.</p>
         </div>
 
-        {/* Video Section */}
+        {/* Video Section
         <div className="md:w-1/2 flex justify-center">
           <iframe
             className="w-full max-w-lg h-80 rounded-lg shadow-md"
@@ -26,7 +26,7 @@ const Management = () => {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>
-        </div>
+        </div> */}
       </div>
 
       {/* Team Members */}
