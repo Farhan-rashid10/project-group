@@ -11,12 +11,12 @@ const StatsSection = () => {
       setCount(count + 3)
   }
   useEffect(()=>{
-      if(count < 321){
+      if(count < 321+){
       setTimeout(()=>setCount(count + 1), 50)
       }
   })
   useEffect(()=>{
-      if(counts <35){
+      if(counts <35+){
       setTimeout(()=>setCounts(counts + 1), 500)
       }
   })
