@@ -11,12 +11,12 @@ const StatsSection = () => {
       setCount(count + 3)
   }
   useEffect(()=>{
-      if(count < 321+){
+      if(count < 321){
       setTimeout(()=>setCount(count + 1), 50)
       }
   })
   useEffect(()=>{
-      if(counts <35+){
+      if(counts <35){
       setTimeout(()=>setCounts(counts + 1), 500)
       }
   })
@@ -37,13 +37,13 @@ useEffect(()=>{
         {/* Hospital Rooms */}
         <div>
           <HomeIcon className="h-12 w-12 mx-auto text-white" />
-          <div className="text-4xl font-bold" onClick={handleClick}>{count}</div>
+          <div className="text-4xl font-bold" onClick={handleClick}>{count}+</div>
           <div className="mt-2 text-xl">Hospital Rooms</div>
         </div>
         {/* Specialist Doctors */}
         <div>
           <UserGroupIcon className="h-12 w-12 mx-auto text-white" />
-          <div className="text-4xl font-bold" onClick={handleClick}>{counts}</div>
+          <div className="text-4xl font-bold" onClick={handleClick}>{counts}+</div>
           <div className="mt-2 text-xl">Specialist Doctors</div>
         </div>
 
