@@ -118,13 +118,14 @@ const Header = () => {
             About us
           </NavLink>
           <NavLink to="/doctors" activeClassName="text-black" className="font-medium text-white hover:text-black decoration-blue hover:underline">
+          Doctors
           </NavLink>
           <NavLink to="/services" activeClassName="text-black" className="font-medium text-white hover:text-black decoration-blue hover:underline">
             Services
           </NavLink>
           <NavLink to="/medicine" activeClassName="text-black" className="font-medium text-white hover:text-black decoration-blue hover:underline">
+         Medicine
           </NavLink>
-         
          
           <NavLink to="/contact" activeClassName="text-black" className="font-medium text-white hover:text-black decoration-blue hover:underline">
             Contact Us
